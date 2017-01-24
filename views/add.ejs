@@ -56,11 +56,24 @@
                data : student ,    // multiple data sent using ajax
             success : function(result){
                          alert('Details added successfully');
+                         clearform();
                         }
              });
          return false;
     });
   });
+
+  function clearform(){
+      $('#reg').val(null)
+      $('#roll').val(null)
+      $('#lname').val(null)
+      $('#fname').val(null)
+      $('#cname').val(null)
+      $('#age').val(null)
+      $('#city').val(null)
+      $('#country').val(null)
+      $('#state').val(null)
+   }
 </script>
 </body>
 </html>

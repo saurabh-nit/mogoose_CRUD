@@ -76,12 +76,12 @@ router.put('/student/edit/:studentId', function(req, res, next) {
        var data = req.body;
        Student.findByIdAndUpdate({ _id:req.params.studentId }, data , { multi: false }, function(err) {
        if(err){
-        // console.log(err);
-        return res.json({error: true, reason: err})
-         }
+          // console.log(err);
+          return res.json({error: true, reason: err})
+        }
        else{
-        //  res.send('Data Updated Successfully.');
-        return res.json({error: false})
+          //res.send('Data Updated Successfully.');
+          return res.json({error: false})
        }
      });
   });

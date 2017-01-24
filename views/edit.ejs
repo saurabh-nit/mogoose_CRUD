@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body style="background-color:#94afb8">
+
+    <div class="row col-lg-4 col-lg-offset-4 ">
+      <div class="form-group">
+        <div>Reg No:<input type="text" id="reg" class="form-control" value="<%= student.regNo %>"></div>
+        <div>Roll No:<input type="number" id="roll" class="form-control" value="<%= student.rollNo %>"></div>
+        <div>First Name:<input type="text" id="fname" class="form-control" value="<%= student.name.first %>" ></div>
+        <div>Last Name:<input type="text" id="lname" class="form-control" value="<%= student.name.last %>"></div>
+        <div>Age:<input type="number" id="age" class="form-control" value="<%= student.ageOf %>"></div>
+        <div>College Name:<input type="text" id="cname" class="form-control" value="<%= student.collegeName %>"></div>
+        <div>City:<input type="text" id="city" class="form-control" value="<%= student.address.cityName %>"></div>
+        <div>Country:<input type="text" id="country" class="form-control" value="<%= student.address.countryName %>"></div>
+        <div>State:<input type="text" id="state" class="form-control" value="<%= student.address.stateName %>"></div>
+        <div><br><button type="button" id="update-btn" class="btn btn-success">Update Details</button></div>
+      </div>
+    </div>
+
+
+<script>
+    $(document).ready(function() {
+         $('#update-btn').click(function (evt) {
+          // alert('hii');
+           evt.preventDefault();
+           var student = {
+                regNo : $('#reg').val(),
+               rollNo : $('#roll').val(),
+                 name :{
+                first : $('#fname').val(),
+                 last : $('#lname').val(),
+                       },
+                ageOf : $('#age').val(),
+          collegeName : $('#cname').val(),
+               address:{
+             cityName : $('#city').val(),
+          countryName : $('#country').val(),
+            stateName : $('#state').val(),
+                       }
+           }
+      // console.log(student);
+
+      $.ajax({
+               type : "PUT",
+              cache : false,
+                url :'/student/edit/'+"<%= student._id %>",
+               data : student ,    // multiple data sent using ajax
+            success : function(result){
+                         //alert(result);
+                         if (result.error) {
+                           alert ("couldn't update")
+                         }
+                         window.location.href='/student/list/';
+                        }
+            });
+    return false;
+    });
+ });
+</script>
+</body>
+</html>

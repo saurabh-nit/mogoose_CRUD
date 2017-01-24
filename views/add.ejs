@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body style="background-color:#c7eac7">
+
+<div class="row col-lg-4 col-lg-offset-4 ">
+  <div class="form-group">
+    <div>Reg No:<input type="text" id="reg" class="form-control"></div>
+    <div>Roll No:<input type="number" id="roll" class="form-control"></div>
+    <div>First Name:<input type="text" id="fname" class="form-control"></div>
+    <div>Last Name:<input type="text" id="lname" class="form-control"></div>
+    <div>Age:<input type="number" id="age" class="form-control"></div>
+    <div>College Name:<input type="text" id="cname" class="form-control"></div>
+    <div>City:<input type="text" id="city" class="form-control"></div>
+    <div>Country:<input type="text" id="country" class="form-control"></div>
+    <div>State:<input type="text" id="state" class="form-control"></div>
+    <div><br><button type="button" id="btn" class="btn btn-primary">Submit</button></div>
+  </div>
+</div>
+
+
+
+
+
+  <script>
+    $(document).ready(function() {
+         $('#btn').click(function (evt) {
+           evt.preventDefault();
+           var student = {
+                regNo : $('#reg').val(),
+               rollNo : $('#roll').val(),
+                 name :{
+                first : $('#fname').val(),
+                 last : $('#lname').val(),
+                       },
+                ageOf : $('#age').val(),
+          collegeName : $('#cname').val(),
+               address:{
+             cityName : $('#city').val(),
+          countryName : $('#country').val(),
+            stateName : $('#state').val(),
+                       }
+           }
+      //  alert(student);
+
+      $.ajax({
+               type :"POST",
+              cache :false,
+                url :'/student/add',
+               data : student ,    // multiple data sent using ajax
+            success : function(result){
+                         alert('Details added successfully');
+                        }
+             });
+         return false;
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>FORM REGISTRATION</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/CustomStyle.css">
+    <script src="Assignment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </head>
+  <body background="bg3.jpg">
+
+   <div class="container">
+
+    <div class="row col-lg-4 col-lg-offset-4 ">
+      <form name="registration">
+        <div class="form-group has-success">
+           <label for="name">Name :</label>
+           <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+        </div>
+
+        <div class="form-group">
+           <label for="reg">Registration :</label>
+           <input type="text" class="form-control" id="reg" name="regno" placeholder="Registration No.">
+        </div>
+
+        <div class="form-group">
+           <label for="roll">Roll No:</label>
+           <input type="text" class="form-control" id="roll" name="rollno" placeholder="Enter Roll No.">
+        </div>
+
+        <div class="form-group">
+           <label for="address">Address :</label>
+           <input type="address" class="form-control" id="address" name="address" placeholder="Address">
+        </div>
+
+        <div class="form-group">
+           <label for="exampleInputEmail1">Email address :</label>
+           <input type="text" class="form-control" id="email" name="email" placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+           <label for="exampleInputPassword1">College :</label>
+           <input type="text" class="form-control" id="clg"  name="clg" placeholder="College">
+        </div>
+
+
+
+        <div class="form-group">
+          <label for="exampleSelect1">Country :</label>
+          <select class="form-control" id="country" name="country"></select>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleSelect2">State :</label>
+          <select name="state" class="form-control" id="state"></select>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" id="valid" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" id="resetting" class="btn btn-primary">Reset Curent</button>
+        </div>
+
+        <div class="btn-group">
+          <button type="button" id="addition" class="btn btn-primary">Add</button>
+        </div>
+
+
+
+
+      </form>
+    </div>     <!-- Second Cloumn-->
+       <div class="row col-lg-3 col-lg-offset-1 " id="demo"></div>   <!-- Third Column -->
+  </div>       <!--Container Class-->
+
+
+    <script language="javascript">populateCountries("country", "state");</script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="validation.js"></script>
+    <script type="text/javascript" src="formObject.js"></script>
+    
+
+
+ </body>
+</html>

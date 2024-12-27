@@ -16,7 +16,7 @@ mongoose.connect("mongodb://localhost/new_express_project");
 
 var app = express();
 
-// view engine setup
+// view engine setup and
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
